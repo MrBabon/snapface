@@ -14,6 +14,9 @@ export class FaceSnapComponent implements OnInit {
   snaps!: number;
   
   ngOnInit(): void {
-    
+    this.title = 'Face Snap';
+    this.description = 'Le moment de vérité...';
+    this.createdAt = new Date();
+    this.snaps = 0;
   }
 }
