@@ -12,31 +12,39 @@ import { FaceSnap } from './models/face-snap';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+
+  faceSnaps!: FaceSnap[];
+
   mySnap!: FaceSnap;
   myOtherSnap!: FaceSnap;
   myLastSnap!: FaceSnap;
 
   ngOnInit(): void {
-    this.mySnap = new FaceSnap(
-      'Face Snap #1',
-      'Le moment de vérité...',
-      'https://picsum.photos/200/300',
-      new Date(),
-      10
-    );
-    this.myOtherSnap = new FaceSnap(
-      'Face Snap #2',
-      'Le moment de vérité...',
-      'https://picsum.photos/200/300',
-      new Date(),
-      10
-    );
-    this.myLastSnap = new FaceSnap(
-      'Face Snap #3',
-      'Le moment de vérité...',
-      'https://picsum.photos/200/300',
-      new Date(),
-      10
-    );
+
+    this.faceSnaps = [
+      new FaceSnap(
+        'Face Snap #1',
+        'Le moment de vérité...',
+        'https://picsum.photos/200/300',
+        new Date(),
+        10
+      ),
+      new FaceSnap(
+        'Face Snap #2',
+        'Le moment de vérité...',
+        'https://picsum.photos/200/300',
+        new Date(),
+        100
+      ),
+      new FaceSnap(
+        'Face Snap #3',
+        'Le moment de vérité...',
+        'https://picsum.photos/200/300',
+        new Date(),
+        300
+      )
+    ]
+
+    this.faceSnaps[1].setLocation('Paris');
   }
 }
