@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
+import { FaceSnap } from './models/face-snap';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,32 @@ import { FaceSnapComponent } from './face-snap/face-snap.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  mySnap!: FaceSnap;
+  myOtherSnap!: FaceSnap;
+  myLastSnap!: FaceSnap;
+
+  ngOnInit(): void {
+    this.mySnap = new FaceSnap(
+      'Face Snap #1',
+      'Le moment de vérité...',
+      'https://picsum.photos/200/300',
+      new Date(),
+      10
+    );
+    this.myOtherSnap = new FaceSnap(
+      'Face Snap #2',
+      'Le moment de vérité...',
+      'https://picsum.photos/200/300',
+      new Date(),
+      10
+    );
+    this.myLastSnap = new FaceSnap(
+      'Face Snap #3',
+      'Le moment de vérité...',
+      'https://picsum.photos/200/300',
+      new Date(),
+      10
+    );
+  }
+}
